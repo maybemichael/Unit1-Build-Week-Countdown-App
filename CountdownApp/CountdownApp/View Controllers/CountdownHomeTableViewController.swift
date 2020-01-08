@@ -16,19 +16,32 @@ class CountdownHomeTableViewController: UITableViewController {
 
     let countdownController = CountdownController()
     
-//    weak var countdownDelegate: CountdownDelegate?
+    weak var countdownDelegate: CountdownDelegate?
+    
+    var timer: Timer?
+    
+    var eventDate: Date?
+        
+    
+    var remainingTimeInterval: TimeInterval {
+        var timeRemaining: TimeInterval = 0
+        if let eventDate = eventDate {
+            timeRemaining = eventDate.timeIntervalSinceNow
+        }
+        return timeRemaining
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countdownController.loadFromPersistentStore()
         
         // Change identifier so I can invalidate it
-        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateViews(timer:))
+        timer = Timer.scheduledTimer(timeInterval: 45.0, target: self, selector: #selector(refreshCountdowns), userInfo: nil, repeats: true)
         
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        updateViews()
     }
     
     // MARK: - Table view data source
@@ -50,14 +63,18 @@ class CountdownHomeTableViewController: UITableViewController {
         // Configure the cell...
         let countdown = countdownController.countdowns[indexPath.row]
         cell.countdown = countdown
-        let eventDate = countdownController.getEventDate(countdown: countdown)
+        eventDate = countdownController.getEventDate(countdown: countdown)
         cell.eventDate = eventDate
-//        countdownDelegate = cell
+        countdownDelegate = cell
         
         return cell
     }
     
-    func updateViews(timer: Timer) {
+    @objc func refreshCountdowns() {
+        tableView.reloadData()
+    }
+    
+    func updateViews() {
         tableView.reloadData()
     }
 
@@ -76,7 +93,15 @@ class CountdownHomeTableViewController: UITableViewController {
         }
     }
     
-
+    func updateTimer(timer: Timer) {
+        let now = Date()
+        if let eventDate = eventDate {
+            if now <= eventDate {
+                countdownDelegate?.countdownUpdate(time: remainingTimeInterval)
+            }
+        }
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

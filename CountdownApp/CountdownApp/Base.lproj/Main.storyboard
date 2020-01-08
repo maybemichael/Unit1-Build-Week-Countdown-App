@@ -30,16 +30,22 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-QT-3ou">
-                                            <rect key="frame" x="20" y="42" width="374" height="30"/>
-                                            <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="25"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-QT-3ou">
+                                            <rect key="frame" x="20" y="42.5" width="374" height="29.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="00:00:00:00">
+                                                    <attributes>
+                                                        <font key="NSFont" size="25" name="Chalkboard"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="U1z-8o-Kdq" firstAttribute="trailing" secondItem="4x5-lc-IRe" secondAttribute="trailingMargin" id="2KR-9Q-N7y"/>
-                                        <constraint firstItem="1fH-QT-3ou" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4x5-lc-IRe" secondAttribute="topMargin" constant="8" id="6iF-57-eVS"/>
+                                        <constraint firstItem="1fH-QT-3ou" firstAttribute="top" secondItem="4x5-lc-IRe" secondAttribute="topMargin" constant="31.5" id="6iF-57-eVS"/>
                                         <constraint firstItem="U1z-8o-Kdq" firstAttribute="leading" secondItem="4x5-lc-IRe" secondAttribute="leadingMargin" id="Kap-uV-Ixf"/>
                                         <constraint firstItem="U1z-8o-Kdq" firstAttribute="top" secondItem="1fH-QT-3ou" secondAttribute="bottom" constant="8" id="QGQ-Nx-BlZ"/>
                                         <constraint firstItem="U1z-8o-Kdq" firstAttribute="bottom" secondItem="4x5-lc-IRe" secondAttribute="bottomMargin" id="VE1-7w-hwP"/>
@@ -160,7 +166,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73b-WP-SIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3460.8695652173915" y="679.6875"/>
+            <point key="canvasLocation" x="3467" y="677"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WCz-0P-NkN">

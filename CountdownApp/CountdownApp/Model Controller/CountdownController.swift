@@ -41,24 +41,27 @@ class CountdownController {
         let countdown = Countdown(eventName: name, date: date, time: time)
         countdowns.append(countdown)
 //        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateTimer(timer:))
+        print("How many timers are there?")
         saveToPersistentStore()
     }
     
     func deleteCountdown(countdown: Countdown) {
         guard let countdownToRemove = countdowns.firstIndex(of: countdown) else { return }
         countdowns.remove(at: countdownToRemove)
-        timer?.invalidate()
+//        timer?.invalidate()
+        
         saveToPersistentStore()
     }
     
-    func updateTimer(timer: Timer) {
-        let now = Date()
-        if let eventDate = eventDate {
-            if now <= eventDate {
-                delegate?.countdownUpdate(time: remainingTimeInterval)
-            }
-        }
-    }
+//    func updateTimer(timer: Timer) {
+//        let now = Date()
+//        print("timer activated")
+//        if let eventDate = eventDate {
+//            if now <= eventDate {
+//                delegate?.countdownUpdate(time: remainingTimeInterval)
+//            }
+//        }
+//    }
     
     var countdownURL: URL? {
         let fileManager = FileManager.default

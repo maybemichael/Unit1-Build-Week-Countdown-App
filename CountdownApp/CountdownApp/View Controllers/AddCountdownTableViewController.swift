@@ -40,7 +40,6 @@ class AddCountdownTableViewController: UITableViewController {
         dateFormatter.timeStyle = .short
         let time = dateFormatter.date(from: timeString)
         countdownController?.createCountdown(name: name, date: date, time: time)
-        print(countdownController?.countdowns.count ?? 0)
         navigationController?.popToRootViewController(animated: true)
     }
     

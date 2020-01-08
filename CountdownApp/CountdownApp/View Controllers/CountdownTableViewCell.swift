@@ -21,6 +21,9 @@ class CountdownTableViewCell: UITableViewCell {
       return formatter
     }()
     
+    var dateComponentFormatter = DateComponentsFormatter()
+        
+    
     var eventDate: Date? {
         didSet {
             updateViews()
@@ -35,12 +38,9 @@ class CountdownTableViewCell: UITableViewCell {
 
     func updateViews() {
         guard let countdown = countdown else { return }
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .full
-        formatter.includesApproximationPhrase = false
-        formatter.includesTimeRemainingPhrase = false
-        formatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
-        formatter.calendar = .current
+        dateComponentFormatter.unitsStyle = .full
+        dateComponentFormatter.includesApproximationPhrase = false
+        dateComponentFormatter.includesTimeRemainingPhrase = false
         
         guard let eventDate = eventDate else { return }
         
@@ -51,26 +51,26 @@ class CountdownTableViewCell: UITableViewCell {
         
         switch eventTime {
         case 1...59:
-            formatter.allowedUnits = [.second]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.second]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 60...3599:
-            formatter.allowedUnits = [.second, .minute]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.minute]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 3600...86399:
-            formatter.allowedUnits = [.second, .minute, .hour]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.minute, .hour]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 86400...2764799:
-            formatter.allowedUnits = [.day, .weekOfMonth, .month]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.day, .month]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 2764800...33177599:
-            formatter.allowedUnits = [.day, .weekOfMonth, .month, .year]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.day, .month, .year]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 33177600...1990656000:
-            formatter.allowedUnits = [.month, .year]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.month, .year]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         default:
-            formatter.allowedUnits = [.second, .minute, .hour, .day, .month, .year]
-            countdownLabel.text = formatter.string(from: eventTime)
+            dateComponentFormatter.allowedUnits = [.second, .minute, .hour, .day, .month, .year]
+            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         }
     }
 }
