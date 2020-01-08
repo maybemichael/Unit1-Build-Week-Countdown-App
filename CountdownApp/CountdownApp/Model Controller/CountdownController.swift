@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol CountdownDelegate: AnyObject {
-    func countdownUpdate(time: TimeInterval)
-}
-
 class CountdownController {
     
     var countdowns: [Countdown] = []
@@ -44,7 +40,7 @@ class CountdownController {
     func createCountdown(name: String, date: Date, time: Date?) {
         let countdown = Countdown(eventName: name, date: date, time: time)
         countdowns.append(countdown)
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateTimer(timer:))
+//        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateTimer(timer:))
         saveToPersistentStore()
     }
     

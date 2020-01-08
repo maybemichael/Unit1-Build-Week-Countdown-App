@@ -18,6 +18,11 @@ class AddCountdownTableViewController: UITableViewController {
     
     var countdown: Countdown?
     
+//    var dateFormatter = DateFormatter {
+//        let formatter = DateFormatter()
+//    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +35,7 @@ class AddCountdownTableViewController: UITableViewController {
         guard let name = countdownNameTextField.text, let dateString = dateInputTextField.text, let timeString = timeInputTextField.text, !name.isEmpty, !dateString.isEmpty else { return }
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
+        dateFormatter.timeZone = .autoupdatingCurrent
         let date = dateFormatter.date(from: dateString) ?? Date()
         dateFormatter.timeStyle = .short
         let time = dateFormatter.date(from: timeString)
@@ -44,6 +50,7 @@ class AddCountdownTableViewController: UITableViewController {
             if let datePicker = self.dateInputTextField.inputView as? UIDatePicker {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .medium
+                dateFormatter.timeZone = .current
                 self.dateInputTextField.text = dateFormatter.string(from: datePicker.date)
             }
             self.dateInputTextField.resignFirstResponder()
@@ -54,6 +61,7 @@ class AddCountdownTableViewController: UITableViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .none
             dateFormatter.timeStyle = .short
+            dateFormatter.timeZone = .current
             self.timeInputTextField.text = dateFormatter.string(from: datePicker.date)
         }
         self.timeInputTextField.resignFirstResponder()

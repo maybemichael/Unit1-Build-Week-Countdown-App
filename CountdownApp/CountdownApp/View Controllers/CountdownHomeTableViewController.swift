@@ -8,26 +8,27 @@
 
 import UIKit
 
-
+protocol CountdownDelegate: AnyObject {
+    func countdownUpdate(time: TimeInterval)
+}
 
 class CountdownHomeTableViewController: UITableViewController {
 
     let countdownController = CountdownController()
     
-    weak var countdownDelegate: CountdownDelegate?
+//    weak var countdownDelegate: CountdownDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countdownController.loadFromPersistentStore()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Change identifier so I can invalidate it
+        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateViews(timer:))
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        updateViews()
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -51,11 +52,12 @@ class CountdownHomeTableViewController: UITableViewController {
         cell.countdown = countdown
         let eventDate = countdownController.getEventDate(countdown: countdown)
         cell.eventDate = eventDate
-        cell.countdownController = countdownController
+//        countdownDelegate = cell
+        
         return cell
     }
     
-    func updateViews() {
+    func updateViews(timer: Timer) {
         tableView.reloadData()
     }
 
@@ -100,3 +102,4 @@ class CountdownHomeTableViewController: UITableViewController {
         }
     }
 }
+

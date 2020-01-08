@@ -13,9 +13,13 @@ class CountdownTableViewCell: UITableViewCell {
     @IBOutlet weak var countdownNameLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
     
-    weak var delegate: CountdownDelegate?
-    
-    var countdownController: CountdownController?
+    var dateFormatter: DateFormatter = {
+      let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.timeZone = .current
+      return formatter
+    }()
     
     var eventDate: Date? {
         didSet {
@@ -68,7 +72,6 @@ class CountdownTableViewCell: UITableViewCell {
             formatter.allowedUnits = [.second, .minute, .hour, .day, .month, .year]
             countdownLabel.text = formatter.string(from: eventTime)
         }
-        print(eventDate)
     }
 }
 

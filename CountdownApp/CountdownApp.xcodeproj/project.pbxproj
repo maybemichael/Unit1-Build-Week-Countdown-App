@@ -50,9 +50,9 @@
 		4C35BD6723C401950063C16A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */,
 				4C35BD6C23C41A110063C16A /* AddCountdownTableViewController.swift */,
 				4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */,
+				4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -76,6 +76,7 @@
 		4C5D043D23C2568D00810956 /* CountdownApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CCC3BE223C64F0A00F58323 /* Views */,
 				4C35BD6723C401950063C16A /* View Controllers */,
 				4C5D045623C25E4C00810956 /* Model Controller */,
 				4C5D045323C25D5700810956 /* Model */,
@@ -112,6 +113,13 @@
 				4C5D045923C25EA700810956 /* CountdownController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		4CCC3BE223C64F0A00F58323 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
