@@ -28,20 +28,86 @@ class CountdownController {
         return timeRemaining
     }
     
+//    func getEventDate(countdown: Countdown) -> Date {
+//        let date = countdown.date
+//        let time = countdown.time
+//        let components = Calendar.current.dateComponents([.second, .minute, .hour, .day, .month, .year], from: countdown.date, to: countdown.time)
+//        let components2 = Calendar.current.dateComponents([.second, .minute, .hour, .day, .month, .year], from: Date(), to: countdown.date)
+//        let components3 = Calendar.current.dateComponents([.second, .minute, .hour, .day, .month, .year], from: Date(), to: countdown.time)
+//        print("This should be difference between date and time... \(components)")
+//        print("This should be difference between date2 and time2... \(components2)")
+//        print("This should be difference between date3 and time3... \(components3)")
+//        let countdownTime = date.timeIntervalSinceNow + time.timeIntervalSinceNow
+//        print("This is the event date... \(countdownTime)")
+//        let countdownDate = Date().addingTimeInterval(countdownTime)
+//        return countdownDate
+//        
+//    }
+    
     func getEventDate(countdown: Countdown) -> Date {
         let date = countdown.date
-        let time = countdown.time ?? Date()
-        let countdownTime = date.timeIntervalSinceNow + time.timeIntervalSinceNow
-        let countdownDate = Date().addingTimeInterval(countdownTime)
-        return countdownDate
+        let time = countdown.time
+        let components = Calendar.current.dateComponents([.second, .minute, .hour, .day, .month, .year], from: countdown.time, to: countdown.date)
+        print("This is the difference between the two dates... \(components)")
+        let updatedDate = date.addingTimeInterval(time.timeIntervalSinceNow)
+        
+        return updatedDate
         
     }
     
-    func createCountdown(name: String, date: Date, time: Date?) {
+//    func getEventDate(date: Date, time: Date) -> Date {
+//        var mergedComponents = DateComponents()
+//        let calendar = Calendar.current
+//        let dateComponents = calendar.dateComponents([.second, .minute, .hour, .day, .month, .year], from: date)
+//        let timeComponents = calendar.dateComponents([.second, .minute, .hour], from: time)
+//
+//        mergedComponents.second = timeComponents.second
+//        mergedComponents.minute = timeComponents.minute
+//        mergedComponents.hour = timeComponents.hour
+//        mergedComponents.day = dateComponents.day
+//        mergedComponents.month = dateComponents.month
+//        mergedComponents.year = dateComponents.year
+//
+//        guard let updatedEventDate = calendar.date(from: mergedComponents) else { return date }
+//        return updatedEventDate
+//    }
+    
+//    func getEventTimeInterval(countdown: Countdown) -> TimeInterval {
+//        let calendar = Calendar.current
+//        let mergedComponents = DateComponents()
+//        var updatedTimeInterval: TimeInterval = 0
+//        guard let time = countdown.time else { return 0}
+//        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: time)
+//        let updatedDate = calendar.date(byAdding: timeComponents, to: countdown.date)
+//        if let updatedDate = updatedDate?.timeIntervalSinceNow {
+//            updatedTimeInterval = updatedDate
+//        } else {
+//            updatedTimeInterval = countdown.date.timeIntervalSinceNow
+//        }
+//
+//        return updatedTimeInterval
+//    }
+    
+//    func getEventDate(countdown: Countdown) -> Date {
+//        let date = countdown.date
+//        print("Users selected date... \(date)")
+//        let time = countdown.time ?? Date()
+//        print("Users selected time... \(time)")
+//        let timeTimeInterval = time.timeIntervalSinceNow
+//        print("New time interval \(timeTimeInterval)")
+//        let dateWithTime = date.addingTimeInterval(timeTimeInterval)
+//        print("Updated date for countdown... \(dateWithTime)")
+//        let countdownTime = Date(timeInterval: <#T##TimeInterval#>, since: <#T##Date#>
+//        let countdownDate = Date().addingTimeInterval(countdownTime)
+//        return countdownDate
+//        return dateWithTime
+//    }
+    
+    func createCountdown(name: String, date: Date, time: Date) {
         let countdown = Countdown(eventName: name, date: date, time: time)
         countdowns.append(countdown)
 //        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: updateTimer(timer:))
-        print("How many timers are there?")
+//        print("How many timers are there?")
         saveToPersistentStore()
     }
     

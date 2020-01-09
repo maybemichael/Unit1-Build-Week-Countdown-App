@@ -11,7 +11,7 @@ import Foundation
 struct Countdown: Equatable, Codable {
     var eventName: String
     var date: Date
-    var time: Date?
+    var time: Date
 }
 
 

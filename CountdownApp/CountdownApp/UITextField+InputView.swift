@@ -41,6 +41,8 @@ extension UITextField {
         let screenWidth = UIScreen.main.bounds.width
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
         datePicker.datePickerMode = .time
+        datePicker.timeZone = .current
+//        datePicker.minimumDate = Date()
 //        if let date = dateFormatter.date(from: "12:00 AM") {
 //            datePicker.setDate(date, animated: true)
 //        }

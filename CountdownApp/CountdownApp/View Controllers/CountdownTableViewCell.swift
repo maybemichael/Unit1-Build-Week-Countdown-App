@@ -23,6 +23,7 @@ class CountdownTableViewCell: UITableViewCell {
     
     var dateComponentFormatter = DateComponentsFormatter()
         
+    var dateString: String?
     
     var eventDate: Date? {
         didSet {
@@ -43,21 +44,21 @@ class CountdownTableViewCell: UITableViewCell {
         dateComponentFormatter.includesTimeRemainingPhrase = false
         
         guard let eventDate = eventDate else { return }
-        
+//        let components = Calendar.current.dateComponents([.second, .minute, .hour, .day, .month, .year], from: countdown.date, to: countdown.time)
         let eventTime = eventDate.timeIntervalSinceNow
+//        print("This is the the time difference... \(components)")
+        
         countdownNameLabel.text = "Until \(countdown.eventName)"
-        
-        
         
         switch eventTime {
         case 1...59:
             dateComponentFormatter.allowedUnits = [.second]
             countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 60...3599:
-            dateComponentFormatter.allowedUnits = [.minute]
+            dateComponentFormatter.allowedUnits = [.second, .minute]
             countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 3600...86399:
-            dateComponentFormatter.allowedUnits = [.minute, .hour]
+            dateComponentFormatter.allowedUnits = [.second, .minute, .hour]
             countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         case 86400...2764799:
             dateComponentFormatter.allowedUnits = [.day, .month]

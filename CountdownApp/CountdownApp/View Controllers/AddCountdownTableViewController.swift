@@ -32,14 +32,15 @@ class AddCountdownTableViewController: UITableViewController {
     }
     
     @IBAction func doneTapped(_ sender: Any) {
-        guard let name = countdownNameTextField.text, let dateString = dateInputTextField.text, let timeString = timeInputTextField.text, !name.isEmpty, !dateString.isEmpty else { return }
+        guard let name = countdownNameTextField.text, let dateString = dateInputTextField.text, let timeString = timeInputTextField.text, !name.isEmpty, !dateString.isEmpty, !timeString.isEmpty else { return }
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeZone = .autoupdatingCurrent
         let date = dateFormatter.date(from: dateString) ?? Date()
         dateFormatter.timeStyle = .short
-        let time = dateFormatter.date(from: timeString)
-        countdownController?.createCountdown(name: name, date: date, time: time)
+        let time = dateFormatter.date(from: timeString) ?? Date()
+        countdownController?.createCountdown(name: name, date: date, time:  time)
+//        countdownController?.createCountdown(name: name, date: date, time: time)
         navigationController?.popToRootViewController(animated: true)
     }
     
@@ -58,10 +59,12 @@ class AddCountdownTableViewController: UITableViewController {
     @objc func tapDone2() {
         if let datePicker = self.timeInputTextField.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .none
+            dateFormatter.dateStyle = .short
             dateFormatter.timeStyle = .short
             dateFormatter.timeZone = .current
+            datePicker.countDownDuration = .infinity
             self.timeInputTextField.text = dateFormatter.string(from: datePicker.date)
+            print("This is the date it gives when you hit done... \(dateFormatter.string(from: datePicker.date))")
         }
         self.timeInputTextField.resignFirstResponder()
     }

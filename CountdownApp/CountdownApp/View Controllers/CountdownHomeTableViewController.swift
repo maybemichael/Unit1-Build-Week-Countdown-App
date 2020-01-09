@@ -21,6 +21,13 @@ class CountdownHomeTableViewController: UITableViewController {
     var timer: Timer?
     
     var eventDate: Date?
+    
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }()
         
     
     var remainingTimeInterval: TimeInterval {
@@ -36,7 +43,7 @@ class CountdownHomeTableViewController: UITableViewController {
         countdownController.loadFromPersistentStore()
         
         // Change identifier so I can invalidate it
-        timer = Timer.scheduledTimer(timeInterval: 45.0, target: self, selector: #selector(refreshCountdowns), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(refreshCountdowns), userInfo: nil, repeats: true)
         
     }
 
@@ -63,8 +70,9 @@ class CountdownHomeTableViewController: UITableViewController {
         // Configure the cell...
         let countdown = countdownController.countdowns[indexPath.row]
         cell.countdown = countdown
-        eventDate = countdownController.getEventDate(countdown: countdown)
-        cell.eventDate = eventDate
+//        let updatedEventDate = countdownController.getEventDate(date: countdown.date, time: countdown.time)
+        let updatedEventDate = countdownController.getEventDate(countdown: countdown)
+        cell.eventDate = updatedEventDate
         countdownDelegate = cell
         
         return cell
@@ -125,6 +133,6 @@ class CountdownHomeTableViewController: UITableViewController {
             guard let addCountdownVC = segue.destination as? AddCountdownTableViewController else { return }
             addCountdownVC.countdownController = countdownController
         }
-    }
+    }    
 }
 
