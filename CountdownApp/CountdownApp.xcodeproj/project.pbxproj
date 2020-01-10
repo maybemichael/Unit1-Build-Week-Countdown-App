@@ -7,8 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0F739323C7BA3600878755 /* EatnCake.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1123C7A656007DAE7A /* EatnCake.ttf */; };
+		4C0F739423C7BA3800878755 /* TheDevilNet.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1223C7A8A9007DAE7A /* TheDevilNet.ttf */; };
+		4C0F739523C7BA3B00878755 /* AgetaChubbyItalicDemo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1323C7A8C0007DAE7A /* AgetaChubbyItalicDemo.otf */; };
+		4C0F739623C7BA3D00878755 /* Absolute.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1423C7A8FA007DAE7A /* Absolute.ttf */; };
+		4C0F739723C7BA3F00878755 /* MoonWalkerPersonalUse.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1523C7A910007DAE7A /* MoonWalkerPersonalUse.ttf */; };
+		4C0F739823C7BA4100878755 /* CNTDN___.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1623C7A9B1007DAE7A /* CNTDN___.TTF */; };
+		4C0F739C23C7D5C700878755 /* TheCaptenHoyda.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F739B23C7D59800878755 /* TheCaptenHoyda.otf */; };
+		4C0F739E23C7D62400878755 /* Smilen.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F739D23C7D62000878755 /* Smilen.otf */; };
+		4C0F73A023C7D6EF00878755 /* Run-6YeWA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F739F23C7D6EB00878755 /* Run-6YeWA.ttf */; };
+		4C0F73A223C7D70800878755 /* NightmarePills.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F73A123C7D70100878755 /* NightmarePills.ttf */; };
+		4C0F73A523C7D77700878755 /* TheMandalorian.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F73A323C7D72B00878755 /* TheMandalorian.ttf */; };
+		4C0F73A623C7D77900878755 /* BeautyMountains.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F73A423C7D77100878755 /* BeautyMountains.ttf */; };
+		4C0F73A823C7D7A700878755 /* Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F73A723C7D7A500878755 /* Black.ttf */; };
+		4C0F73AA23C7DA2600878755 /* Greywall.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F73A923C7DA2600878755 /* Greywall.ttf */; };
 		4C35BD6923C401CE0063C16A /* CountdownHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */; };
-		4C35BD6D23C41A110063C16A /* AddCountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C35BD6C23C41A110063C16A /* AddCountdownTableViewController.swift */; };
+		4C3E9B1823C7AB33007DAE7A /* CountdownDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1723C7AB33007DAE7A /* CountdownDetailViewController.swift */; };
+		4C3E9B1B23C7ACA8007DAE7A /* CountdownSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E9B1A23C7ACA8007DAE7A /* CountdownSettingsTableViewController.swift */; };
 		4C5D043F23C2568D00810956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D043E23C2568D00810956 /* AppDelegate.swift */; };
 		4C5D044123C2568D00810956 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D044023C2568D00810956 /* SceneDelegate.swift */; };
 		4C5D044623C2568D00810956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5D044423C2568D00810956 /* Main.storyboard */; };
@@ -18,11 +33,31 @@
 		4C5D045C23C25ECF00810956 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D045B23C25ECF00810956 /* Countdown.swift */; };
 		4C92F49A23C4F6EE0027CED8 /* UITextField+InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C92F49923C4F6EE0027CED8 /* UITextField+InputView.swift */; };
 		4C92F49E23C5161F0027CED8 /* CountdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */; };
+		4CA0F49C23C8185000DB6A99 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F49B23C8185000DB6A99 /* SettingsTableViewCell.swift */; };
+		4CA0F4A023C82A6D00DB6A99 /* CountdownsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F49F23C82A6D00DB6A99 /* CountdownsTableViewCell.swift */; };
+		4CA0F4A223C82CC900DB6A99 /* SortingOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F4A123C82CC900DB6A99 /* SortingOptionsTableViewController.swift */; };
+		4CA0F4A623C830D100DB6A99 /* AddCountdownsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F4A523C830D100DB6A99 /* AddCountdownsTableViewController.swift */; };
+		4CA0F4A823C8359000DB6A99 /* SortingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F4A723C8359000DB6A99 /* SortingOptionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0F739B23C7D59800878755 /* TheCaptenHoyda.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheCaptenHoyda.otf; sourceTree = "<group>"; };
+		4C0F739D23C7D62000878755 /* Smilen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smilen.otf; sourceTree = "<group>"; };
+		4C0F739F23C7D6EB00878755 /* Run-6YeWA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Run-6YeWA.ttf"; sourceTree = "<group>"; };
+		4C0F73A123C7D70100878755 /* NightmarePills.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NightmarePills.ttf; sourceTree = "<group>"; };
+		4C0F73A323C7D72B00878755 /* TheMandalorian.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheMandalorian.ttf; sourceTree = "<group>"; };
+		4C0F73A423C7D77100878755 /* BeautyMountains.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BeautyMountains.ttf; sourceTree = "<group>"; };
+		4C0F73A723C7D7A500878755 /* Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Black.ttf; sourceTree = "<group>"; };
+		4C0F73A923C7DA2600878755 /* Greywall.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Greywall.ttf; sourceTree = "<group>"; };
 		4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownHomeTableViewController.swift; sourceTree = "<group>"; };
-		4C35BD6C23C41A110063C16A /* AddCountdownTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownTableViewController.swift; sourceTree = "<group>"; };
+		4C3E9B1123C7A656007DAE7A /* EatnCake.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EatnCake.ttf; sourceTree = "<group>"; };
+		4C3E9B1223C7A8A9007DAE7A /* TheDevilNet.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheDevilNet.ttf; sourceTree = "<group>"; };
+		4C3E9B1323C7A8C0007DAE7A /* AgetaChubbyItalicDemo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AgetaChubbyItalicDemo.otf; sourceTree = "<group>"; };
+		4C3E9B1423C7A8FA007DAE7A /* Absolute.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Absolute.ttf; sourceTree = "<group>"; };
+		4C3E9B1523C7A910007DAE7A /* MoonWalkerPersonalUse.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MoonWalkerPersonalUse.ttf; sourceTree = "<group>"; };
+		4C3E9B1623C7A9B1007DAE7A /* CNTDN___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CNTDN___.TTF"; sourceTree = "<group>"; };
+		4C3E9B1723C7AB33007DAE7A /* CountdownDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailViewController.swift; sourceTree = "<group>"; };
+		4C3E9B1A23C7ACA8007DAE7A /* CountdownSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownSettingsTableViewController.swift; sourceTree = "<group>"; };
 		4C5D043B23C2568D00810956 /* CountdownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountdownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5D043E23C2568D00810956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C5D044023C2568D00810956 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +69,11 @@
 		4C5D045B23C25ECF00810956 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		4C92F49923C4F6EE0027CED8 /* UITextField+InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+InputView.swift"; sourceTree = "<group>"; };
 		4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTableViewCell.swift; sourceTree = "<group>"; };
+		4CA0F49B23C8185000DB6A99 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		4CA0F49F23C82A6D00DB6A99 /* CountdownsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsTableViewCell.swift; sourceTree = "<group>"; };
+		4CA0F4A123C82CC900DB6A99 /* SortingOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOptionsTableViewController.swift; sourceTree = "<group>"; };
+		4CA0F4A523C830D100DB6A99 /* AddCountdownsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownsTableViewController.swift; sourceTree = "<group>"; };
+		4CA0F4A723C8359000DB6A99 /* SortingOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOptionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,14 +87,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C35BD6723C401950063C16A /* View Controllers */ = {
+		4C3E9B1923C7AC32007DAE7A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4C35BD6C23C41A110063C16A /* AddCountdownTableViewController.swift */,
-				4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */,
-				4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */,
+				4C3E9B1123C7A656007DAE7A /* EatnCake.ttf */,
+				4C3E9B1223C7A8A9007DAE7A /* TheDevilNet.ttf */,
+				4C3E9B1323C7A8C0007DAE7A /* AgetaChubbyItalicDemo.otf */,
+				4C3E9B1423C7A8FA007DAE7A /* Absolute.ttf */,
+				4C3E9B1523C7A910007DAE7A /* MoonWalkerPersonalUse.ttf */,
+				4C3E9B1623C7A9B1007DAE7A /* CNTDN___.TTF */,
+				4C0F739F23C7D6EB00878755 /* Run-6YeWA.ttf */,
+				4C0F739B23C7D59800878755 /* TheCaptenHoyda.otf */,
+				4C0F73A123C7D70100878755 /* NightmarePills.ttf */,
+				4C0F73A323C7D72B00878755 /* TheMandalorian.ttf */,
+				4C0F73A423C7D77100878755 /* BeautyMountains.ttf */,
+				4C0F739D23C7D62000878755 /* Smilen.otf */,
+				4C0F73A923C7DA2600878755 /* Greywall.ttf */,
+				4C0F73A723C7D7A500878755 /* Black.ttf */,
 			);
-			path = "View Controllers";
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4C5D043223C2568C00810956 = {
@@ -77,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				4CCC3BE223C64F0A00F58323 /* Views */,
-				4C35BD6723C401950063C16A /* View Controllers */,
+				4CA0F4A323C82CEA00DB6A99 /* View Controllers */,
 				4C5D045623C25E4C00810956 /* Model Controller */,
 				4C5D045323C25D5700810956 /* Model */,
 				4C5D045223C256DF00810956 /* Resources */,
@@ -85,6 +136,7 @@
 				4C5D044723C2568E00810956 /* Assets.xcassets */,
 				4C5D044C23C2568E00810956 /* Info.plist */,
 				4C92F49923C4F6EE0027CED8 /* UITextField+InputView.swift */,
+				4C3E9B1923C7AC32007DAE7A /* Fonts */,
 			);
 			path = CountdownApp;
 			sourceTree = "<group>";
@@ -115,9 +167,33 @@
 			path = "Model Controller";
 			sourceTree = "<group>";
 		};
+		4CA0F4A323C82CEA00DB6A99 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CA0F4A523C830D100DB6A99 /* AddCountdownsTableViewController.swift */,
+				4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */,
+				4C3E9B1723C7AB33007DAE7A /* CountdownDetailViewController.swift */,
+				4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */,
+				4CA0F4A423C8300400DB6A99 /* Settings */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4CA0F4A423C8300400DB6A99 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4C3E9B1A23C7ACA8007DAE7A /* CountdownSettingsTableViewController.swift */,
+				4CA0F4A123C82CC900DB6A99 /* SortingOptionsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4CCC3BE223C64F0A00F58323 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CA0F49B23C8185000DB6A99 /* SettingsTableViewCell.swift */,
+				4CA0F49F23C82A6D00DB6A99 /* CountdownsTableViewCell.swift */,
+				4CA0F4A723C8359000DB6A99 /* SortingOptionsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,9 +256,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0F739523C7BA3B00878755 /* AgetaChubbyItalicDemo.otf in Resources */,
+				4C0F73A023C7D6EF00878755 /* Run-6YeWA.ttf in Resources */,
+				4C0F739823C7BA4100878755 /* CNTDN___.TTF in Resources */,
+				4C0F739C23C7D5C700878755 /* TheCaptenHoyda.otf in Resources */,
+				4C0F739323C7BA3600878755 /* EatnCake.ttf in Resources */,
 				4C5D044B23C2568E00810956 /* LaunchScreen.storyboard in Resources */,
+				4C0F73AA23C7DA2600878755 /* Greywall.ttf in Resources */,
+				4C0F739423C7BA3800878755 /* TheDevilNet.ttf in Resources */,
+				4C0F73A623C7D77900878755 /* BeautyMountains.ttf in Resources */,
 				4C5D044823C2568E00810956 /* Assets.xcassets in Resources */,
+				4C0F73A523C7D77700878755 /* TheMandalorian.ttf in Resources */,
+				4C0F739723C7BA3F00878755 /* MoonWalkerPersonalUse.ttf in Resources */,
+				4C0F73A223C7D70800878755 /* NightmarePills.ttf in Resources */,
+				4C0F739623C7BA3D00878755 /* Absolute.ttf in Resources */,
+				4C0F739E23C7D62400878755 /* Smilen.otf in Resources */,
 				4C5D044623C2568D00810956 /* Main.storyboard in Resources */,
+				4C0F73A823C7D7A700878755 /* Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,12 +285,18 @@
 			files = (
 				4C92F49E23C5161F0027CED8 /* CountdownTableViewCell.swift in Sources */,
 				4C5D043F23C2568D00810956 /* AppDelegate.swift in Sources */,
-				4C35BD6D23C41A110063C16A /* AddCountdownTableViewController.swift in Sources */,
+				4CA0F4A023C82A6D00DB6A99 /* CountdownsTableViewCell.swift in Sources */,
 				4C5D045A23C25EA700810956 /* CountdownController.swift in Sources */,
+				4CA0F4A223C82CC900DB6A99 /* SortingOptionsTableViewController.swift in Sources */,
 				4C92F49A23C4F6EE0027CED8 /* UITextField+InputView.swift in Sources */,
 				4C5D044123C2568D00810956 /* SceneDelegate.swift in Sources */,
+				4CA0F49C23C8185000DB6A99 /* SettingsTableViewCell.swift in Sources */,
+				4C3E9B1B23C7ACA8007DAE7A /* CountdownSettingsTableViewController.swift in Sources */,
+				4CA0F4A823C8359000DB6A99 /* SortingOptionsTableViewCell.swift in Sources */,
+				4C3E9B1823C7AB33007DAE7A /* CountdownDetailViewController.swift in Sources */,
 				4C35BD6923C401CE0063C16A /* CountdownHomeTableViewController.swift in Sources */,
 				4C5D045C23C25ECF00810956 /* Countdown.swift in Sources */,
+				4CA0F4A623C830D100DB6A99 /* AddCountdownsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

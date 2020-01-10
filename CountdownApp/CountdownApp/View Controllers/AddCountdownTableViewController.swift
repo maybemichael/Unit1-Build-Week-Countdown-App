@@ -13,67 +13,66 @@ class AddCountdownTableViewController: UITableViewController {
     @IBOutlet weak var countdownNameTextField: UITextField!
     @IBOutlet weak var dateInputTextField: UITextField!
     @IBOutlet weak var timeInputTextField: UITextField!
-    
+
     var countdownController: CountdownController?
-    
+
     var countdown: Countdown?
-    
-//    var dateFormatter = DateFormatter {
-//        let formatter = DateFormatter()
-//    }()
-    
-    
+
+    var combinedDate: Date?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.dateInputTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
         self.timeInputTextField.setInputViewDatePicker2(target: self, selector: #selector(tapDone2))
-        
+
     }
-    
+
     @IBAction func doneTapped(_ sender: Any) {
         guard let name = countdownNameTextField.text, let dateString = dateInputTextField.text, let timeString = timeInputTextField.text, !name.isEmpty, !dateString.isEmpty, !timeString.isEmpty else { return }
+        var updatedDate: Date?
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeZone = .autoupdatingCurrent
-        let date = dateFormatter.date(from: dateString) ?? Date()
         dateFormatter.timeStyle = .short
-        let time = dateFormatter.date(from: timeString) ?? Date()
-        countdownController?.createCountdown(name: name, date: date, time:  time)
-//        countdownController?.createCountdown(name: name, date: date, time: time)
+        if let date = dateFormatter.date(from: dateString), let time = dateFormatter.date(from: timeString) {
+            updatedDate = countdownController?.getEventDate(date: date, time: time)
+        }
+        combinedDate = updatedDate
+        countdownController?.createCountdown(name: name, date: combinedDate ?? Date())
+
         navigationController?.popToRootViewController(animated: true)
     }
-    
-    
-    
+
+
+
     @objc func tapDone() {
-            if let datePicker = self.dateInputTextField.inputView as? UIDatePicker {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = .medium
-                dateFormatter.timeZone = .current
-                self.dateInputTextField.text = dateFormatter.string(from: datePicker.date)
-            }
-            self.dateInputTextField.resignFirstResponder()
+        if let datePicker = self.dateInputTextField.inputView as? UIDatePicker {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeZone = .current
+        self.dateInputTextField.text = dateFormatter.string(from: datePicker.date)
         }
-    
+        self.dateInputTextField.resignFirstResponder()
+    }
+
     @objc func tapDone2() {
         if let datePicker = self.timeInputTextField.inputView as? UIDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            dateFormatter.timeStyle = .short
-            dateFormatter.timeZone = .current
-            datePicker.countDownDuration = .infinity
-            self.timeInputTextField.text = dateFormatter.string(from: datePicker.date)
-            print("This is the date it gives when you hit done... \(dateFormatter.string(from: datePicker.date))")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        dateFormatter.timeZone = .current
+        datePicker.countDownDuration = .infinity
+        self.timeInputTextField.text = dateFormatter.string(from: datePicker.date)
         }
         self.timeInputTextField.resignFirstResponder()
     }
 }
+
+// MARK: - Table view data source
+/*
     
 
-
-    // MARK: - Table view data source
-    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0

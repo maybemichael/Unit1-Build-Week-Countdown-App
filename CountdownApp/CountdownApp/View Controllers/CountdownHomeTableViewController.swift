@@ -16,8 +16,6 @@ class CountdownHomeTableViewController: UITableViewController {
 
     let countdownController = CountdownController()
     
-    weak var countdownDelegate: CountdownDelegate?
-    
     var timer: Timer?
     
     var eventDate: Date?
@@ -42,44 +40,43 @@ class CountdownHomeTableViewController: UITableViewController {
         super.viewDidLoad()
         countdownController.loadFromPersistentStore()
         
-        // Change identifier so I can invalidate it
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(refreshCountdowns), userInfo: nil, repeats: true)
         
     }
 
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
+        print("\(countdownController.countdowns)")
     }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return countdownController.countdowns.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountdownCell", for: indexPath) as? CountdownTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountdownCell", for: indexPath) as? CountdownsTableViewCell else { return UITableViewCell()}
 
         // Configure the cell...
         let countdown = countdownController.countdowns[indexPath.row]
         cell.countdown = countdown
-//        let updatedEventDate = countdownController.getEventDate(date: countdown.date, time: countdown.time)
-        let updatedEventDate = countdownController.getEventDate(countdown: countdown)
-        cell.eventDate = updatedEventDate
-        countdownDelegate = cell
+        let eventDate = countdown.date
+        cell.eventDate = eventDate
         
         return cell
     }
     
     @objc func refreshCountdowns() {
-        tableView.reloadData()
+        for visibleCell in tableView.visibleCells {
+            guard let cell = visibleCell as? CountdownsTableViewCell else { continue }
+            cell.updateViews()
+        }
     }
     
     func updateViews() {
@@ -100,16 +97,6 @@ class CountdownHomeTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    func updateTimer(timer: Timer) {
-        let now = Date()
-        if let eventDate = eventDate {
-            if now <= eventDate {
-                countdownDelegate?.countdownUpdate(time: remainingTimeInterval)
-            }
-        }
-    }
-    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -130,9 +117,22 @@ class CountdownHomeTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddCountdownSegue" {
-            guard let addCountdownVC = segue.destination as? AddCountdownTableViewController else { return }
+            guard let addCountdownVC = segue.destination as? AddCountdownsTableViewController else { return }
             addCountdownVC.countdownController = countdownController
+        } else if segue.identifier == "CountdownDetailSegue" {
+            guard let countdownDetailVC = segue.destination as? CountdownDetailViewController else { return }
+            countdownDetailVC.countdownController = countdownController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let selectedCountdown = countdownController.countdowns[indexPath.row]
+                countdownDetailVC.countdown = selectedCountdown
+                countdownDetailVC.eventDate = countdownController.countdowns[indexPath.row].date
+            }
+        } else if segue.identifier == "CountdownSettingsSegue" {
+            guard let countdownSettingsVC = segue.destination as? CountdownSettingsTableViewController else { return }
+            countdownSettingsVC.countdownController = countdownController
         }
-    }    
+    }
 }
+
+
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CountdownTableViewCell: UITableViewCell {
+class Countdown78TableViewCell: UITableViewCell {
 
     @IBOutlet weak var countdownNameLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
@@ -43,12 +43,10 @@ class CountdownTableViewCell: UITableViewCell {
         dateComponentFormatter.includesApproximationPhrase = false
         dateComponentFormatter.includesTimeRemainingPhrase = false
         
-        guard let eventDate = eventDate else { return }
-//        let components = Calendar.current.dateComponents([.second, .minute, .hour, .day, .month, .year], from: countdown.date, to: countdown.time)
-        let eventTime = eventDate.timeIntervalSinceNow
-//        print("This is the the time difference... \(components)")
-        
-        countdownNameLabel.text = "Until \(countdown.eventName)"
+        let eventTime = countdown.date.timeIntervalSinceNow
+        if eventTime > 0 {
+            countdownNameLabel.text = "Time until \n \(countdown.eventName)"
+        }
         
         switch eventTime {
         case 1...59:
@@ -71,13 +69,9 @@ class CountdownTableViewCell: UITableViewCell {
             countdownLabel.text = dateComponentFormatter.string(from: eventTime)
         default:
             dateComponentFormatter.allowedUnits = [.second, .minute, .hour, .day, .month, .year]
-            countdownLabel.text = dateComponentFormatter.string(from: eventTime)
+            countdownLabel.text = dateComponentFormatter.string(from: abs(eventTime))
+            countdownNameLabel.text = "Time since \n \(countdown.eventName)"
         }
     }
 }
 
-extension CountdownTableViewCell: CountdownDelegate {
-    func countdownUpdate(time: TimeInterval) {
-        updateViews()
-    }
-}
