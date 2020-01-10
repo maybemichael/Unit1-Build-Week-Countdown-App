@@ -46,7 +46,7 @@ class CountdownHomeTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
-        print("\(countdownController.countdowns)")
+        print("This is the bool... \(countdownController.sortingByDate)")
     }
     
     // MARK: - Table view data source
@@ -76,6 +76,7 @@ class CountdownHomeTableViewController: UITableViewController {
         for visibleCell in tableView.visibleCells {
             guard let cell = visibleCell as? CountdownsTableViewCell else { continue }
             cell.updateViews()
+            countdownController.sortCountdowns()
         }
     }
     
@@ -130,6 +131,9 @@ class CountdownHomeTableViewController: UITableViewController {
         } else if segue.identifier == "CountdownSettingsSegue" {
             guard let countdownSettingsVC = segue.destination as? CountdownSettingsTableViewController else { return }
             countdownSettingsVC.countdownController = countdownController
+            
+            let sortedByDate = countdownController.sortingByDate
+            countdownSettingsVC.sortedByDate = sortedByDate
         }
     }
 }

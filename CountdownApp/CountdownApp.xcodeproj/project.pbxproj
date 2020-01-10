@@ -32,7 +32,6 @@
 		4C5D045A23C25EA700810956 /* CountdownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D045923C25EA700810956 /* CountdownController.swift */; };
 		4C5D045C23C25ECF00810956 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D045B23C25ECF00810956 /* Countdown.swift */; };
 		4C92F49A23C4F6EE0027CED8 /* UITextField+InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C92F49923C4F6EE0027CED8 /* UITextField+InputView.swift */; };
-		4C92F49E23C5161F0027CED8 /* CountdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */; };
 		4CA0F49C23C8185000DB6A99 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F49B23C8185000DB6A99 /* SettingsTableViewCell.swift */; };
 		4CA0F4A023C82A6D00DB6A99 /* CountdownsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F49F23C82A6D00DB6A99 /* CountdownsTableViewCell.swift */; };
 		4CA0F4A223C82CC900DB6A99 /* SortingOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F4A123C82CC900DB6A99 /* SortingOptionsTableViewController.swift */; };
@@ -68,7 +67,6 @@
 		4C5D045923C25EA700810956 /* CountdownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownController.swift; sourceTree = "<group>"; };
 		4C5D045B23C25ECF00810956 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		4C92F49923C4F6EE0027CED8 /* UITextField+InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+InputView.swift"; sourceTree = "<group>"; };
-		4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTableViewCell.swift; sourceTree = "<group>"; };
 		4CA0F49B23C8185000DB6A99 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		4CA0F49F23C82A6D00DB6A99 /* CountdownsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsTableViewCell.swift; sourceTree = "<group>"; };
 		4CA0F4A123C82CC900DB6A99 /* SortingOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOptionsTableViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				4CA0F4A523C830D100DB6A99 /* AddCountdownsTableViewController.swift */,
-				4C92F49D23C5161F0027CED8 /* CountdownTableViewCell.swift */,
 				4C3E9B1723C7AB33007DAE7A /* CountdownDetailViewController.swift */,
 				4C35BD6823C401CE0063C16A /* CountdownHomeTableViewController.swift */,
 				4CA0F4A423C8300400DB6A99 /* Settings */,
@@ -283,7 +280,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C92F49E23C5161F0027CED8 /* CountdownTableViewCell.swift in Sources */,
 				4C5D043F23C2568D00810956 /* AppDelegate.swift in Sources */,
 				4CA0F4A023C82A6D00DB6A99 /* CountdownsTableViewCell.swift in Sources */,
 				4C5D045A23C25EA700810956 /* CountdownController.swift in Sources */,

@@ -12,26 +12,12 @@ class CountdownController {
     
     var countdowns: [Countdown] = []
     
-    var sorting = Sorting()
+    var sortingByDate: Bool = false
     
-//    var eventDate: Date?
-    
-//    var eventTime: TimeInterval = 0
-    
-//    var remainingTimeInterval: TimeInterval {
-//        var timeRemaining: TimeInterval = 0
-//        if let eventDate = eventDate {
-//            timeRemaining = eventDate.timeIntervalSinceNow
-//        }
-//        return timeRemaining
-//    }
-    
-    func sortCountdowns(array: [Countdown]) {
-        if sorting.sortByDate {
-            sorting.sortByName = false
+    func sortCountdowns() {
+        if sortingByDate {
             countdowns.sort(by: { $0.date < $1.date })
         } else {
-            sorting.sortByDate = false
             countdowns.sort(by: { $0.eventName < $1.eventName })
         }
     }

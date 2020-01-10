@@ -9,12 +9,10 @@
 import UIKit
 
 class CountdownSettingsTableViewController: UITableViewController {
-
-    
-    
-//    @IBOutlet weak var settingsLabel: UILabel!
     
     var countdownController: CountdownController?
+    
+    var sortedByDate: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +90,9 @@ class CountdownSettingsTableViewController: UITableViewController {
         if segue.identifier == "SortingOptionsSegue" {
             guard let sortingOptionsVC = segue.destination as? SortingOptionsTableViewController else { return }
             sortingOptionsVC.countdownController = countdownController
+            
+//            let sortedByDate = countdownController?.sortingByDate
+//            sortingOptionsVC.sortedByDate = sortedByDate
         }
     }
 }

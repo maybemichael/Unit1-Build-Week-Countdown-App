@@ -14,19 +14,15 @@ class SortingOptionsTableViewCell: UITableViewCell {
     
     var countdownController: CountdownController?
     
+//    override var accessoryType: UITableViewCell.AccessoryType = .none
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    @IBAction func sortingSwitchToggled(_ sender: Any) {
-        countdownController?.sorting.sortByDate.toggle()
-        guard let sortedCountdown = countdownController?.countdowns else { return }
-        countdownController?.sortCountdowns(array: sortedCountdown)
-    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
-
 }

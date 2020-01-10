@@ -12,14 +12,17 @@ class SortingOptionsTableViewController: UITableViewController {
 
     var countdownController: CountdownController?
     
+//    var sortedByDate: Bool?
+    
+    var checkedCell2: UITableViewCell?
+    
+    var checkedCell: SortingOptionsTableViewCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        checkedCell?.accessoryType = .none
+        
     }
 
     // MARK: - Table view data source
@@ -36,21 +39,41 @@ class SortingOptionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SortingOptionsCell", for: indexPath) as? SortingOptionsTableViewCell else { return UITableViewCell()}
 
-        let sorting = SortingOptions(rawValue: indexPath.row)?.description
-        cell.sortingOptionsLabel.text = sorting
+        let sortingOptions = SortingOptions(rawValue: indexPath.row)?.description
+        cell.sortingOptionsLabel.text = sortingOptions
+        
+        cell.countdownController = countdownController
         
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none{
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        }
+
+        tableView.reloadData()
+        guard let sortByDateCell = tableView.cellForRow(at: indexPath) else { return }
+        sortCountdowns(cell: sortByDateCell)
+        
+        guard let sortByDate = countdownController?.sortingByDate else { return }
+        print(sortByDate)
+        }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func sortCountdowns(cell: UITableViewCell) {
+        if cell.accessoryType == .checkmark {
+            countdownController?.sortingByDate = true
+        } else {
+            countdownController?.sortingByDate = false
+        }
     }
-    */
+}
 
+   
+    
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -88,4 +111,4 @@ class SortingOptionsTableViewController: UITableViewController {
     }
     */
 
-}
+

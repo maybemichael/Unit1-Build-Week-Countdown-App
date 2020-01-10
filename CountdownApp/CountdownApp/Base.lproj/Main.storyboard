@@ -28,21 +28,21 @@
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownCell" rowHeight="112" id="MGl-Dr-RDP" customClass="CountdownsTableViewCell" customModule="CountdownApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.5" width="374" height="112"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownCell" rowHeight="150" id="MGl-Dr-RDP" customClass="CountdownsTableViewCell" customModule="CountdownApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="374" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MGl-Dr-RDP" id="4x5-lc-IRe">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Until Event" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="U1z-8o-Kdq">
                                             <rect key="frame" x="20" y="11" width="334" height="56"/>
-                                            <fontDescription key="fontDescription" name="BLACK" family="BLACK" pointSize="27"/>
+                                            <fontDescription key="fontDescription" name="BLACK" family="BLACK" pointSize="18"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-QT-3ou">
-                                            <rect key="frame" x="20" y="75" width="334" height="26"/>
+                                            <rect key="frame" x="20" y="113" width="334" height="26"/>
                                             <fontDescription key="fontDescription" name="Greywall" family="Greywall" pointSize="20"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -402,33 +402,23 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SortingOptionsCell" id="GEB-Yq-upn" customClass="SortingOptionsTableViewCell" customModule="CountdownApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.5" width="374" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="SortingOptionsCell" id="GEB-Yq-upn" customClass="SortingOptionsTableViewCell" customModule="CountdownApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GEB-Yq-upn" id="LXu-DV-aIT">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="330" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hca-hV-SeI">
-                                            <rect key="frame" x="305" y="6" width="51" height="31.5"/>
-                                            <connections>
-                                                <action selector="sortingSwitchToggled:" destination="GEB-Yq-upn" eventType="valueChanged" id="tja-ww-H8T"/>
-                                            </connections>
-                                        </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorting Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-I5-P0r">
-                                            <rect key="frame" x="20" y="11" width="120.5" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="120.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Hca-hV-SeI" firstAttribute="top" secondItem="LXu-DV-aIT" secondAttribute="top" constant="6" id="HVA-pL-pWH"/>
-                                        <constraint firstAttribute="bottom" secondItem="Hca-hV-SeI" secondAttribute="bottom" constant="6.5" id="OZV-f7-81Q"/>
-                                        <constraint firstItem="Hca-hV-SeI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pLX-I5-P0r" secondAttribute="trailing" constant="8" id="Y5Q-40-hd8"/>
                                         <constraint firstItem="pLX-I5-P0r" firstAttribute="top" secondItem="LXu-DV-aIT" secondAttribute="topMargin" id="ZiD-bo-bTJ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="pLX-I5-P0r" secondAttribute="bottom" constant="0.5" id="pnj-tR-7oh"/>
-                                        <constraint firstAttribute="trailing" secondItem="Hca-hV-SeI" secondAttribute="trailing" constant="20" id="vx2-OO-eUU"/>
                                         <constraint firstItem="pLX-I5-P0r" firstAttribute="leading" secondItem="LXu-DV-aIT" secondAttribute="leadingMargin" id="w2W-QR-3tL"/>
                                     </constraints>
                                 </tableViewCellContentView>
