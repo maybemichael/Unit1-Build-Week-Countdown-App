@@ -70,4 +70,22 @@ class CountdownDetailViewController: UIViewController {
     }
     */
 
+    // MARK: - State Restoration
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        // Countdown -> Data -> Encode
+        guard let countdown = countdown else { return }
+        let countdownData = try? PropertyListEncoder().encode(countdown)
+        coder.encode(countdownData, forKey: "countdownData")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        
+        // Data -> Countdown -> Set Countdown Variable
+        guard let countdownData = coder.decodeObject(forKey: "countdownData") as? Data else { return }
+        countdown = try? PropertyListDecoder().decode(Countdown.self, from: countdownData)
+    }
 }

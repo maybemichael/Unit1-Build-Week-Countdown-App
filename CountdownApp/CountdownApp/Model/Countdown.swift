@@ -18,25 +18,28 @@ struct Countdown: Equatable, Codable {
 //}
 enum SettingsOptions: Int, Equatable, Codable, CaseIterable, CustomStringConvertible {
     case sortCountdowns
-//    case formatCountdowns
+    case formatCountdowns
 
     var description: String {
         switch self {
         case .sortCountdowns:
             return "Sort Countdowns"
-//        case .formatCountdowns:
-//            return "Format Countdowns"
+        case .formatCountdowns:
+            return "Format Countdowns"
         }
     }
 }
 
 enum SortingOptions: Int, Equatable, Codable, CaseIterable, CustomStringConvertible {
     case sortByDate
+    case sortByName
     
     var description: String {
         switch self {
         case .sortByDate:
             return "Sort By Date"
+        case .sortByName:
+            return "Sort By Name"
         }
     }
 }
